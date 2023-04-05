@@ -64,7 +64,7 @@ module DatabaseCleaner
       end
 
       def information_schema_exists? connection
-        connection.adapter_name == "Mysql2"
+        connection.adapter_name.in?(["Mysql2", "Trilogy"])
       end
     end
   end
